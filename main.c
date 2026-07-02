@@ -7,35 +7,30 @@ char *foodItem[6] = {"banana", "apple", "bread", "meat"};
 char item[] = "food";
 char item_2[] = "food_2";
 
-int itemCount(){
+// int itemCount(char *Item[]){
+//     int len = sizeof(*Item) / sizeof(*Item[0]);
+//     return len;
+// }
 
-    int count = 0;
-
-    while (foodItem[count] != NULL)
-    {
-        count++;
-    }
-    return count;
-}
-
-void addItem(char item[]) {
+void addItem(char item[], char *destination[]) {
     int count = 0;
     
-    while(foodItem[count] != NULL) {
+    while(destination[count] != NULL) {
         
         count++;
     }
-    foodItem[count] = item;
+    destination[count] = item;
 }
+
 
 int main()
 {
-    addItem(item);
-    addItem(item_2);
+    addItem(item, foodItem);
+    addItem(item_2, foodItem);
 
-    int len = sizeof(foodItem) / sizeof(foodItem[0]);
+    int length = sizeof(foodItem) / sizeof(foodItem[0]);
 
-    for (int i = 0; i < len - 1; i++) {
+    for (int i = 0; i < length - 1; i++) {
         printf("%s\n",foodItem[i]);
     }
 }
