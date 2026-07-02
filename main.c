@@ -3,14 +3,14 @@
 
 
 char *message = "Inventory open!";
-char *foodItem[] = {"banana", "apple", "bread", "meat"};
+char *foodItem[5] = {"banana", "apple", "bread", "meat"};
 
 int main()
 {
-    int len = sizeof(foodItem) / sizeof(foodItem[0]);
+    int count = 0;
     
-    for(int i = 0; i < len; i++) {
-        printf("%s\n",foodItem[i]);
+    while(foodItem[count] != NULL) {
+        printf("%s\n",foodItem[count]);
+        count++;
     }
-
 }
