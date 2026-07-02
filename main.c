@@ -4,8 +4,16 @@
 
 #define SIZE 6
 
+typedef struct Item {
+    char *name;
+    int cost;
+    int quantity;
+} Item ;
+
 char *message = "Inventory open!";
 char *foodItem[SIZE] = {"banana", "apple", "bread", "meat"};
+Item inventory[SIZE];
+
 char item[] = "food";
 char item_2[] = "food_2";
 
@@ -36,8 +44,6 @@ int main()
     addItem(item, foodItem);
     addItem(item_2, foodItem);
 
-    removeItem(foodItem, 6);
-    removeItem(foodItem, 5);
 
     int length = sizeof(foodItem) / sizeof(foodItem[0]);
 
