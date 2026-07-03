@@ -1,20 +1,45 @@
-# Prerequisites
+# ============================================================
+# General
+# ============================================================
+
+# Dependency directories
+node_modules/
+venv/
+env/
+packages/
+
+# Environment variables and secrets
+.env
+.env.local
+credentials.json
+
+# ============================================================
+# Build Outputs
+# ============================================================
+
+dist/
+build/
+bin/
+obj/
+
+# ============================================================
+# Compiled / Binary Files
+# ============================================================
+
+# Python
+*.pyc
+
+# Java
+*.class
+
+# Dependency files
 *.d
 
 # Object files
 *.o
-*.ko
 *.obj
+*.ko
 *.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
 
 # Libraries
 *.lib
@@ -22,7 +47,7 @@
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+# Shared libraries
 *.dll
 *.so
 *.so.*
@@ -36,13 +61,29 @@
 *.x86_64
 *.hex
 
-# Debug files
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled headers
+*.gch
+*.pch
+
+# ============================================================
+# Debug Symbols
+# ============================================================
+
 *.dSYM/
 *.su
 *.idb
 *.pdb
+*.dwo
 
-# Kernel Module Compile Results
+# ============================================================
+# Linux Kernel Module Build Files
+# ============================================================
+
 *.mod*
 *.cmd
 .tmp_versions/
@@ -51,5 +92,26 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# debug information files
-*.dwo
+# ============================================================
+# Logs
+# ============================================================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# ============================================================
+# IDE / Editor Settings
+# ============================================================
+
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+
+# ============================================================
+# Operating System Files
+# ============================================================
+
+.DS_Store
+Thumbs.db

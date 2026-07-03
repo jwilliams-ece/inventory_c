@@ -1,10 +1,8 @@
-/* this will serve as the title screen and entry way into the program*/
+/* This will function as the title/menu screen for the program*/
 
 #include <stdio.h>
 
-
 int main() {
-    /*print title*/
-
-    /*print options*/
+    printf("Hello, World!");
+    return 0;
 }
