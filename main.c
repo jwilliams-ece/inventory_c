@@ -22,14 +22,17 @@ int main() {
     switch (input)
     {
     case 0:
-        /* code */
+        printf("Goodbye!\n");
         return 0;
     case 1:
         clearScreen();
-        printf("Screen is Cleared!");
+        printf("Inventory Menu...\n");
         break;
     
     default:
+        printf("Invalid Input.\n");
         break;
     }
+
+    printf("Program continues...\n");
 }
