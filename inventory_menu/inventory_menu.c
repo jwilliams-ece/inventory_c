@@ -22,15 +22,15 @@ Item foodList[] = {
 
 /* loop function that displays all the current items in inventory*/
 
-void printItems() {
-    int len = sizeof(foodList) / sizeof(foodList[0]);
+void printItems(Item *list) {
+    int len = sizeof(list) / sizeof(list[0]);
 
     printf("%-15s %8s\n", "Name", "Cost");
 
     for (int i = 0; i < len; i++) {
         printf("%-15s $%7.2f\n", 
-                  foodList[i].name, 
-                 foodList[i].cost);
+                  list[i].name, 
+                 list[i].cost);
     }
 }
 
@@ -40,7 +40,7 @@ int inventoryMenu() {
 
     printf("====INVENTORY MENU=================\r\n\r\n\r\n");
     printf("This is the current inventory      \n\n\n");
-    printItems();
+    printItems(foodList);
     printf("===================================\n\n");
 
     printf("Continue: 1\nExit: 0\n\n");
