@@ -1,8 +1,13 @@
 /* This will function as the title/menu screen for the program */
-
 #include <stdio.h>
+#include <stdlib.h>
 
 int input;
+
+void clearScreen() {
+        system("clear"); 
+}
+
 
 int main() {
     printf("====MAIN MENU======================\n\n\n");
@@ -12,14 +17,16 @@ int main() {
     printf("Continue: 1\nExit: 0\n\n");
 
     printf("Input: ");
-    scanf("%d", input);
+    scanf("%d", &input);
 
     switch (input)
     {
     case 0:
         /* code */
-        break;
+        return 0;
     case 1:
+        clearScreen();
+        printf("Screen is Cleared!");
         break;
     
     default:
