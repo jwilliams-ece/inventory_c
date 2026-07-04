@@ -22,21 +22,21 @@ char item_2[] = "food_2";
 //     return len;
 // }
 
-void addItem(char item[], char *destination[]) {
-    int count = 0;
+// void addItem(char item[], char *destination[]) {
+//     int count = 0;
     
-    while(destination[count] != NULL) {
+//     while(destination[count] != NULL) {
         
-        count++;
-    }
-    destination[count] = item;
-}
+//         count++;
+//     }
+//     destination[count] = item;
+// }
 
-void removeItem(char *destination[], int size) {
-    if (size > 0) {
-        destination[size - 1] = NULL;
-    }
-}
+// void removeItem(char *destination[], int size) {
+//     if (size > 0) {
+//         destination[size - 1] = NULL;
+//     }
+// }
 
 
 int main()

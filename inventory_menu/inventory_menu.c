@@ -3,6 +3,8 @@
 #include "../utils/utils.h"
 #include "inventory_menu.h"
 
+#define MAX_SIZE 10
+
 /*This is the main inventory menu layout*/
 
 
@@ -13,28 +15,33 @@ typedef struct
 
 } Item;
 
-Item foodList[] = {
-    {"Apple", 1},
-    {"Banana", .50},
-    {"Orange", .75},
-    {"egg", 5},
-};
+Item foodList[MAX_SIZE];
+int itemCount = 0;
+
+
+/* funciton that adds to the food item list available*/
+void addItem(char name[], float cost) {
+    foodList[itemCount] = (Item){name,cost};
+    itemCount++;
+}
 
 /* loop function that displays all the current items in inventory*/
 
 void printItems(Item *list) {
-    int len = sizeof(list) / sizeof(list[0]);
-
+    
     printf("%-15s %8s\n", "Name", "Cost");
 
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < itemCount; i++) {
         printf("%-15s $%7.2f\n", 
-                  list[i].name, 
-                 list[i].cost);
-    }
+            list[i].name, 
+            list[i].cost);
+        }
 }
-
+      
 int inventoryMenu() {
+
+    addItem("Apple", 1.0);
+    addItem("BANANA", .5);
 
     int input;
 
