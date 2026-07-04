@@ -1,19 +1,11 @@
 #include <stdio.h>
 
 #include "../utils/utils.h"
-#include "inventory_menu.h"
+#include "../include/inventory_menu.h"
 
 #define MAX_SIZE 10
 
 /*This is the main inventory menu layout*/
-
-
-typedef struct
-{
-    char *name;
-    float cost;
-
-} Item;
 
 Item foodList[MAX_SIZE];
 int itemCount = 0;

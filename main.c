@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #include "utils/utils.h"
-#include "inventory_menu/inventory_menu.h"
+#include "include/inventory_menu.h"
 
 int input;
 
