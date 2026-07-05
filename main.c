@@ -4,34 +4,13 @@
 
 #include "utils/utils.h"
 #include "include/inventory_menu.h"
-
-int input;
+#include "main_menu/main_menu.h"
 
 
 int main() {
-    printf("====MAIN MENU======================\n\n\n");
-    printf("This is an inventory storage system\n\n\n");
-    printf("===================================\n\n");
-
-    printf("Continue: 1\nExit: 0\n\n");
-
-    printf("Input: ");
-    scanf("%d", &input);
-
-    switch (input)
-    {
-    case 0:
-        printf("Goodbye!\n");
-        return 0;
-    case 1:
-        clearScreen();
-        inventoryMenu();
-        break;
+    clearScreen();
     
-    default:
-        printf("Invalid Input.\n");
-        break;
-    }
+    mainMenu();
 
-    printf("Program continues...\n");
+    return 0;
 }

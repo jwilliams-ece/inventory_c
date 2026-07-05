@@ -2,6 +2,7 @@
 
 #include "../utils/utils.h"
 #include "../include/inventory_menu.h"
+#include "../main_menu/main_menu.h"
 
 #define MAX_SIZE 10
 
@@ -42,7 +43,7 @@ int inventoryMenu() {
     printItems(foodList);
     printf("===================================\n\n");
 
-    printf("Continue: 1\nExit: 0\n\n");
+    printf("Return to Main menu: 1\nExit: 0\n\n");
 
     printf("Input: ");
     scanf("%d", &input);
@@ -54,7 +55,7 @@ int inventoryMenu() {
         return 0;
     case 1:
         clearScreen();
-        inventoryMenu();
+        mainMenu();
         break;
     
     default:
