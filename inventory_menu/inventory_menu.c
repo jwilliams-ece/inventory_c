@@ -18,6 +18,11 @@ void addItem(char name[], float cost) {
     itemCount++;
 }
 
+void removeItem() {
+    itemCount--;
+    foodList[itemCount] = (Item){NULL};
+}
+
 /* loop function that displays all the current items in inventory*/
 
 void printItems(Item *list) {
@@ -33,10 +38,12 @@ void printItems(Item *list) {
       
 int inventoryMenu() {
 
+    int input;
+
     addItem("Apple", 1.0);
     addItem("BANANA", .5);
 
-    int input;
+    removeItem();
 
     printf("====INVENTORY MENU=================\r\n\r\n\r\n");
     printf("This is the current inventory      \n\n\n");
