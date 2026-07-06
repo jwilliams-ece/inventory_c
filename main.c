@@ -9,8 +9,6 @@
 
 int main() {
     
-    clearScreen();
-    
     mainMenu();
 
     return 0;

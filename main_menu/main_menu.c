@@ -10,7 +10,8 @@
 
 
 int mainMenu() {
-    
+    clearScreen();
+
     int input;
 
     printf("====MAIN MENU======================\n\n\n");
