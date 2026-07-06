@@ -1,3 +1,5 @@
+/*This is the main inventory menu layout*/
+
 #include <stdio.h>
 #include <string.h>
 
@@ -7,13 +9,12 @@
 
 #define MAX_SIZE 10
 
-/*This is the main inventory menu layout*/
 
 Item foodList[MAX_SIZE];
 int itemCount = 0;
 
 
-/* funciton that adds to the food item list available*/
+/* funciton that adds to the food item list available */
 void addItem(Item list[]) {
     char name[20];
     float cost;
@@ -28,7 +29,7 @@ void addItem(Item list[]) {
     itemCount++;
 }
 
-/* removes the last item from the list of items*/
+/* removes the last item from the list of items */
 void removeItem(Item list[]) {
     if(itemCount > 0) {
         itemCount--;
@@ -37,7 +38,7 @@ void removeItem(Item list[]) {
 }
 
 
-/* loop function that displays all the current items in inventory*/
+/* loop function that displays all the current items in inventory */
 void printItems(Item list[]) {
     
     printf("%-15s %8s\n", "Name", "Cost");
