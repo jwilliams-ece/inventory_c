@@ -26,8 +26,8 @@ void removeItem(Item list[]) {
     }
 }
 
-/* loop function that displays all the current items in inventory*/
 
+/* loop function that displays all the current items in inventory*/
 void printItems(Item list[]) {
     
     printf("%-15s %8s\n", "Name", "Cost");
