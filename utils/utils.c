@@ -7,38 +7,36 @@ void clearScreen() {
         system("clear"); 
 }
 
-int itemCount = 0;
-
 /* funciton that adds to the food item list available */
-void addItem(Item list[]) {
+void addItem(Item list[], int *itemCount) {
     char name[20];
     float cost;
 
     printf("Input Name: ");
-    scanf("%19s", list[itemCount].name);
+    scanf("%19s", list[*itemCount].name);
 
     printf("Input Cost: ");
     scanf("%f", &cost);
-    list[itemCount].cost = cost;
+    list[*itemCount].cost = cost;
 
-    itemCount++;
+    *itemCount = *(itemCount - 1) + 1;
 }
 
 /* removes the last item from the list of items */
-void removeItem(Item list[]) {
-    if(itemCount > 0) {
-        itemCount--;
-        list[itemCount] = (Item){'\0'};
+void removeItem(Item list[], int *itemCount) {
+    if(*itemCount > 0) {
+        *itemCount = *(itemCount - 1) - 1;;
+        list[*itemCount] = (Item){'\0'};
     }
 }
 
 
 /* loop function that displays all the current items in inventory */
-void printItems(Item list[]) {
+void printItems(Item list[], int *itemCount) {
     
     printf("%-15s %8s\n", "Name", "Cost");
 
-    for (int i = 0; i < itemCount; i++) {
+    for (int i = 0; i < *itemCount; i++) {
         printf("%-15s $%7.2f\n", 
             list[i].name, 
             list[i].cost);

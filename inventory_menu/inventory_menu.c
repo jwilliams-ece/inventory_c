@@ -11,7 +11,7 @@
 
 
 Item foodList[MAX_SIZE];
-
+int foodListCount = 0;
       
 int inventoryMenu() {
     clearScreen();
@@ -20,7 +20,7 @@ int inventoryMenu() {
 
     printf("====INVENTORY MENU=================\r\n\r\n\r\n");
     printf("This is the current inventory      \n\n\n");
-    printItems(foodList);
+    printItems(foodList, &foodListCount);
     printf("===================================\n\n");
 
     printf("Add Item: 3\nRemove Item: 2\nReturn to Main menu: 1\nExit: 0\n\n");
@@ -37,11 +37,11 @@ int inventoryMenu() {
         mainMenu();
         break;
     case 2:
-        removeItem(foodList);
+        removeItem(foodList, &foodListCount);
         inventoryMenu();
         break;
     case 3:
-        addItem(foodList);
+        addItem(foodList, &foodListCount);
         inventoryMenu();
         break;
     default:

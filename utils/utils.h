@@ -14,13 +14,13 @@ typedef struct
 void clearScreen();
 
 /* funciton that adds to the food item list available*/
-void addItem(Item list[]);
+void addItem(Item list[], int *itemCount);
 
 /* removes the last item from the list of items*/
-void removeItem(Item list[]);
+void removeItem(Item list[], int *itemCount);
 
 /* loop function that displays all the current items in inventory*/
-void printItems(Item list[]);
+void printItems(Item list[], int *itemCount);
 
 #endif
 
