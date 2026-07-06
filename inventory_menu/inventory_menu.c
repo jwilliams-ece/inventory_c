@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "../utils/utils.h"
 #include "../include/inventory_menu.h"
@@ -13,8 +14,17 @@ int itemCount = 0;
 
 
 /* funciton that adds to the food item list available*/
-void addItem(Item list[], char name[], float cost) {
-    list[itemCount] = (Item){name,cost};
+void addItem(Item list[]) {
+    char name[20];
+    float cost;
+
+    printf("Input Name: ");
+    scanf("%19s", list[itemCount].name);
+
+    printf("Input Cost: ");
+    scanf("%f", &cost);
+    list[itemCount].cost = cost;
+
     itemCount++;
 }
 
@@ -22,7 +32,7 @@ void addItem(Item list[], char name[], float cost) {
 void removeItem(Item list[]) {
     if(itemCount > 0) {
         itemCount--;
-        list[itemCount] = (Item){NULL};
+        list[itemCount] = (Item){'\0'};
     }
 }
 
@@ -60,7 +70,6 @@ int inventoryMenu() {
         printf("Goodbye!\n");
         return 0;
     case 1:
-        clearScreen();
         mainMenu();
         break;
     case 2:
@@ -68,7 +77,7 @@ int inventoryMenu() {
         inventoryMenu();
         break;
     case 3:
-        addItem(foodList,"Apple", 1.0);
+        addItem(foodList);
         inventoryMenu();
         break;
     default:
