@@ -32,7 +32,6 @@ int mainMenu() {
         clearScreen();
         inventoryMenu();
         break;
-    
     default:
         printf("Invalid Input.\n");
         break;

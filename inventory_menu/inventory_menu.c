@@ -4,14 +4,15 @@
 #include <string.h>
 
 #include "../utils/utils.h"
-#include "../include/inventory_menu.h"
 #include "../main_menu/main_menu.h"
+#include "../include/inventory_menu.h"
+#include "../include/food_menu.h"
+#include "../include/weapons_menu.h"
+#include "../include/armor_menu.h"
+#include "../include/potions_menu.h"
 
 #define MAX_SIZE 10
 
-
-Item foodList[MAX_SIZE];
-int foodListCount = 0;
       
 int inventoryMenu() {
     clearScreen();
@@ -20,10 +21,10 @@ int inventoryMenu() {
 
     printf("====INVENTORY MENU=================\r\n\r\n\r\n");
     printf("This is the current inventory      \n\n\n");
-    printItems(foodList, &foodListCount);
+    printf("===FOOD===WEAPONS===ARMOR===POTIONS\n\n");
     printf("===================================\n\n");
 
-    printf("Add Item: 3\nRemove Item: 2\nReturn to Main menu: 1\nExit: 0\n\n");
+    printf("Potions Menu: 5\nArmor Menu: 4\nWeapons Menu: 3\nFood Menu: 2\nReturn to Main menu: 1\nExit: 0\n\n");
 
     printf("Input: ");
     scanf("%d", &input);
@@ -37,12 +38,16 @@ int inventoryMenu() {
         mainMenu();
         break;
     case 2:
-        removeItem(foodList, &foodListCount);
-        inventoryMenu();
+        foodMenu();
         break;
     case 3:
-        addItem(foodList, &foodListCount);
-        inventoryMenu();
+        weaponsMenu();
+        break;
+    case 4:
+        armorMenu();
+        break;
+    case 5:
+        potionsMenu();
         break;
     default:
         printf("Invalid Input.\n");

@@ -19,13 +19,13 @@ void addItem(Item list[], int *itemCount) {
     scanf("%f", &cost);
     list[*itemCount].cost = cost;
 
-    *itemCount = *(itemCount - 1) + 1;
+    *itemCount = *itemCount + 1;
 }
 
 /* removes the last item from the list of items */
 void removeItem(Item list[], int *itemCount) {
     if(*itemCount > 0) {
-        *itemCount = *(itemCount - 1) - 1;;
+        *itemCount = *itemCount - 1;;
         list[*itemCount] = (Item){'\0'};
     }
 }
